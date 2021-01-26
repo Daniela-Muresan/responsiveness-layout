@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@700&display=swap" rel="stylesheet">
+font-family: 'Lusitana', serif;
+
+<link href="https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap" rel="stylesheet">
+font-family: 'Caudex', serif;
+
+<link href="https://fonts.googleapis.com/css2?family=Caudex&display=swap" rel="stylesheet">
+
+
+
