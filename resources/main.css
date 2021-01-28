@@ -10,29 +10,38 @@ html, body, .page-wrapper{
     width: 100%;
     height: auto;
     border-bottom: 1px solid  #aaafb4;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 10px 0;
     display: flex;
     align-items: center;
 }
 .header-wrapper h1{
     width: 30%;
-    border: 1px solid black;
-    padding-left: 20px;
+    /* border: 1px solid black; */
+    padding-left: 30px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: 900;
 }
 .navigation-desktop{
     width: 70%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     flex-grow: 1;
-    /* margin-left: 50px; */
-   
+}
+.navigation-mobile{
+    display: none;
+    width: 70%;
+    /* border: 1px solid black; */
+    text-align: right;
+    padding-right: 30px;
+}
+/* Nu am gasit cum sa fac border-urile mai subtiri, sau trebuia sapun doar sageata si ulterior sa aplic border?  */
+.navigation-mobile i{
+    font-size: 30px;
 }
 .navigation-list{
     list-style: none;
-    padding: 0 50px;
+    margin: 0 50px;
     display: flex;
     justify-content: space-between;
 }
@@ -42,20 +51,186 @@ html, body, .page-wrapper{
     font-size: 20px;
     color: #aaafb4;
 }
-.aside-wrapper{
-    border: 3px solid black;
-    width: 30%;
+.container-wrapper{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
+    flex-direction: row-reverse;
+}
+aside{
+    width: 30%;
+}
+.aside-wrapper{
+    /* border: 3px solid black; */
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .text-content-wrapper{
-    margin: 100px 0;
-    font-family: 'Times New Roman', Times, serif;
+    margin: 100px 0 0;
+    font-family: 'Frank Ruhl Libre', serif;    
 }
 .text-content-wrapper h2{
-    margin: 100px 0 0;
-    font-size: 50px;
+    font-size: 100px;
+    line-height: 90px;
     font-weight: 900;
+    letter-spacing: 7px;
+}
+.text-content-wrapper h3{
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 900;
+}
+.text-content-wrapper h3 span{
+    display: block;
+}
+.text-content-wrapper p{
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 30px 0;
+}
+.text-content-wrapper p span{
+    display: block;
+}
+.arrows-wrapper{
+    margin-bottom: 30px;
+}
+.arrows-wrapper i{
+    text-align: center;
+    color: #f4dfc4;
+    font-size: 50px;
+    margin-right: 20px;
+}
+.image-wrapper{
+    /* display: inline-block; */
+    /* border: 1px solid green; */
+    width: 70%;
+    margin-left: 50px;
+}
+.image-wrapper img{
+    width: 100%;
+    height: auto;
+}
+.offer-wrapper{
+    background-color: black;
+    color: white;
+    width: 27%;
+    position: absolute;
+    bottom: 0;
+    left: 27%;
+    z-index: 100;
+}
+.offer-content-wrapper{
+    margin: 0 60px 40px 25px;
+}
+.offer-content-wrapper h4, h5, h6{
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 25px;
+    margin: 25px 0 15px;
+}
+.offer-content-wrapper p{
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+}
+.offer-content-wrapper span{
+    display: block;
+}
+/* .offer-wrapper width=27% and margin left=27% =>reservation-wrapper width=46% */
+.reservation-wrapper{
+    background-color: #f4dfc4;
+    color: white;
+    display: inline-block;
+    width: 46%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.reservation-content-wrapper{
+    margin-left: 25px;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+.reservation-content-wrapper p{
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+}
+button{
+    width: 80px;
+    height: 50px;
+    border: 1px solid white;
+    margin: 20px 0 20px -5px;
+    background-color: transparent;
+}
+button a{
+    text-decoration: none;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+
+@media (max-width: 599px){
+    .navigation-desktop{
+        display: none;
+    }
+    .header-wrapper h1{
+        width: 50%;
+    }
+    .navigation-mobile{
+        display: block;
+        width: 50%;
+    }
+    /* Nu inteleg de ce html, body nu imi mai iau tot height-ul. */
+    .container-wrapper{
+      flex-direction: column;
+    }
+    .image-wrapper{
+        width: 100%;
+        margin: 0;
+    }
+    aside{
+        width: 50%;
+        position: relative;
+    }
+    .text-content-wrapper {
+        margin: 10px 0 0;
+    }
+    .text-content-wrapper h2 {
+        font-size: 50px;
+        line-height: 50px;
+
+    }
+    .text-content-wrapper h3{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .text-content-wrapper p{
+        margin: 20px 0;
+    }
+    .arrows-wrapper{
+        display: none;
+    }
+    /* Nu am reusit cu structura pe care o am in html nicicum sa-l pozitionez.
+    Daca imi fac un div pentru aside si offer-wrapper imi stric pozitionarea pe partea de desktop */
+    .offer-wrapper{
+        position: relative;
+        width: 50%;
+        left: 50%; 
+        transform: translate(0, -100%);   
+    }
+    .offer-content-wrapper h4, h5, h6{
+        margin-top: 15px;
+    }
+    .reservation-wrapper{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 200;
+    }
+    .reservation-content-wrapper{
+        margin-top: 0px;
+    }
+    .reservation-content-wrapper h6{
+        line-height: 20px ;
+    }
 }
