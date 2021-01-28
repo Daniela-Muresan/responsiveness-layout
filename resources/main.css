@@ -36,6 +36,7 @@ html, body, .page-wrapper{
     padding-right: 30px;
 }
 /* Nu am gasit cum sa fac border-urile mai subtiri, sau trebuia sapun doar sageata si ulterior sa aplic border?  */
+/* da, este o varianta. Asa vin la pachet cu sagetile si evident se mor mari/micsora in proportie */
 .navigation-mobile i{
     font-size: 30px;
 }
@@ -181,6 +182,7 @@ button a{
         width: 50%;
     }
     /* Nu inteleg de ce html, body nu imi mai iau tot height-ul. */
+    /* de fapt il ia, acum nu stiu exact cum ai testat tu asta sau la ce te asteptai sa faca, dar height ai pentru ca nu il modifici */
     .container-wrapper{
       flex-direction: column;
     }
@@ -212,6 +214,7 @@ button a{
     }
     /* Nu am reusit cu structura pe care o am in html nicicum sa-l pozitionez.
     Daca imi fac un div pentru aside si offer-wrapper imi stric pozitionarea pe partea de desktop */
+    /* este normal sa se intampla asta, din aceasta cauza trebuie sa ne gandim la un nomitor comun, daca putem extrage. E pura matematica ca solutia pt un breakpoint nu va fi si solutia pentru un altul */
     .offer-wrapper{
         position: relative;
         width: 50%;
