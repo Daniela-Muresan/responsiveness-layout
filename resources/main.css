@@ -1,14 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 html, body, .page-wrapper{
     width: 100%;
     height: 100%;
 }
+header{
+    width: 100%;
+    height: 5%;
+}
 .header-wrapper{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-bottom: 1px solid  #aaafb4;
     /* border: 2px solid black; */
     padding: 10px 0;
@@ -35,10 +40,9 @@ html, body, .page-wrapper{
     text-align: right;
     padding-right: 30px;
 }
-/* Nu am gasit cum sa fac border-urile mai subtiri, sau trebuia sapun doar sageata si ulterior sa aplic border?  */
-/* da, este o varianta. Asa vin la pachet cu sagetile si evident se mor mari/micsora in proportie */
 .navigation-mobile i{
     font-size: 30px;
+    color:  #aaafb4;
 }
 .navigation-list{
     list-style: none;
@@ -52,10 +56,13 @@ html, body, .page-wrapper{
     font-size: 20px;
     color: #aaafb4;
 }
-.container-wrapper{
+main{
     width: 100%;
+    height: 65%;
     display: flex;
-    flex-direction: row-reverse;
+}
+.container-wrapper{
+    width: 35%;
 }
 aside{
     width: 30%;
@@ -96,20 +103,24 @@ aside{
     margin-bottom: 30px;
 }
 .arrows-wrapper i{
+    border: 1px solid #f4dfc4;
+    padding: 0 25px;
     text-align: center;
     color: #f4dfc4;
     font-size: 50px;
     margin-right: 20px;
 }
-.image-wrapper{
-    /* display: inline-block; */
-    /* border: 1px solid green; */
-    width: 70%;
-    margin-left: 50px;
+.arrows-wrapper i:nth-child(1){
+    padding-left: 18.75px;
 }
-.image-wrapper img{
-    width: 100%;
-    height: auto;
+.arrows-wrapper i:nth-child(2){
+    padding-right: 18.75px;
+}
+.image-wrapper{
+    width: 70%;
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .offer-wrapper{
     background-color: black;
@@ -123,7 +134,7 @@ aside{
 .offer-content-wrapper{
     margin: 0 60px 40px 25px;
 }
-.offer-content-wrapper h4, h5, h6{
+.offer-content-wrapper div, h4{
     font-family: 'Frank Ruhl Libre', serif;
     font-size: 25px;
     margin: 25px 0 15px;
@@ -141,6 +152,7 @@ aside{
     color: white;
     display: inline-block;
     width: 46%;
+    height: 30%;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -169,7 +181,6 @@ button a{
     color: white;
 }
 
-
 @media (max-width: 599px){
     .navigation-desktop{
         display: none;
@@ -181,59 +192,78 @@ button a{
         display: block;
         width: 50%;
     }
-    /* Nu inteleg de ce html, body nu imi mai iau tot height-ul. */
-    /* de fapt il ia, acum nu stiu exact cum ai testat tu asta sau la ce te asteptai sa faca, dar height ai pentru ca nu il modifici */
+    main {
+        flex-direction: column-reverse;
+        height: 70%;
+    }
     .container-wrapper{
-      flex-direction: column;
+        width: 100%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
     }
     .image-wrapper{
         width: 100%;
+        height: 55%;
         margin: 0;
     }
-    aside{
+    .aside-wrapper{
         width: 50%;
-        position: relative;
+        position: relative;       
     }
     .text-content-wrapper {
         margin: 10px 0 0;
     }
     .text-content-wrapper h2 {
-        font-size: 50px;
-        line-height: 50px;
-
+        font-size: 35px;
+        line-height: 35px;
     }
     .text-content-wrapper h3{
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 20px;
     }
     .text-content-wrapper p{
-        margin: 20px 0;
+        margin: 15px 0;
+        font-size: 13px;
+    }
+    .text-content-wrapper p span{
+        display: inline;
     }
     .arrows-wrapper{
         display: none;
     }
-    /* Nu am reusit cu structura pe care o am in html nicicum sa-l pozitionez.
-    Daca imi fac un div pentru aside si offer-wrapper imi stric pozitionarea pe partea de desktop */
-    /* este normal sa se intampla asta, din aceasta cauza trebuie sa ne gandim la un nomitor comun, daca putem extrage. E pura matematica ca solutia pt un breakpoint nu va fi si solutia pentru un altul */
     .offer-wrapper{
         position: relative;
         width: 50%;
-        left: 50%; 
-        transform: translate(0, -100%);   
+        height: 100%;
+        left: 0;   
     }
-    .offer-content-wrapper h4, h5, h6{
+    .offer-content-wrapper{
+        font-size: 13px;
+        margin: 10px;
+    }
+    .offer-content-wrapper div, h4{
         margin-top: 15px;
+        font-size: 25px;
+    }
+    .offer-content-wrapper p{  
+        font-size: 13px;
     }
     .reservation-wrapper{
         display: block;
         width: 100%;
+        height: 25%;
         box-sizing: border-box;
         z-index: 200;
     }
-    .reservation-content-wrapper{
+    .reservation-content-wrapper{  
         margin-top: 0px;
     }
-    .reservation-content-wrapper h6{
+    .reservation-content-wrapper h4{
         line-height: 20px ;
+    }
+    button{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
