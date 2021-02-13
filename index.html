@@ -23,20 +23,25 @@
 <body>
     <div class="page-wrapper">
         <header>
-            <div class="header-wrapper">
+            <div id="header-wrapper" class="header-wrapper">
                 <h1>Best Escapes</h1>
-                <nav class="navigation-desktop">
-                    <ul class="navigation-list">
+                <nav class="navigation-wrapper">
+                    <ul id="navigation-list" class="navigation-list">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Specials</a></li>
                         <li><a href="#">Last minute</a></li>
                         <li><a href="#">Register/Login</a></li>
+                        <li class="social-media instagram mobile"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="social-media facebook mobile"><a href="#"> <i class="fab fa-facebook-f"></i></a></li>
+                        </li>
                     </ul>
                 </nav>
 
-                <nav class="navigation-mobile">
-                    <a href="#"><i class="fas fa-bars"></i></a>
+                <nav id="menu-icon" class="navigation-mobile-icon mobile">
+                    <a href="#"><i id="icon" class="fas fa-bars"></i></a>
                 </nav>
+                
+                
             </div>
         </header>
 
@@ -84,6 +89,7 @@
             </div>
         </footer>
     </div>
-</body>
 
+    <script src="resources/mobile-menu-click.js"></script>
+</body>
 </html>

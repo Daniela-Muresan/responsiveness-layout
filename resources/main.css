@@ -28,19 +28,22 @@ header{
     font-size: 30px;
     font-weight: 900;
 }
-.navigation-desktop{
+.navigation-wrapper{
     width: 70%;
     /* border: 1px solid black; */
     flex-grow: 1;
 }
-.navigation-mobile{
+.mobile{
+    display: none;
+}
+.navigation-mobile-icon{
     display: none;
     width: 70%;
     /* border: 1px solid black; */
     text-align: right;
     padding-right: 30px;
 }
-.navigation-mobile i{
+.navigation-mobile-icon i{
     font-size: 30px;
     color:  #aaafb4;
 }
@@ -182,16 +185,69 @@ button a{
 }
 
 @media (max-width: 599px){
-    .navigation-desktop{
-        display: none;
+    body{
+        overflow-x: hidden;
+    }
+    header{
+        height: 10%;
     }
     .header-wrapper h1{
-        width: 50%;
+        width: 100%;
     }
-    .navigation-mobile{
+    .navigation-wrapper{
+        width: 100%;      
+    }
+    .mobile{
+        display: block;
+    }
+    .navigation-list{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: #000;
+        z-index: 300;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
+    .navigation-list li{
+        padding: 20px 30px;
+    }
+    .navigation-list li a{
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;  
+    }
+    .social-media{
+        border: 1px solid #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 10%;
+        text-align: center;
+    }
+    .social-media i{
+        font-size: 30px;
+    }
+    .social-media.facebook{
+        left: 50%;
+    }
+    
+    .navigation-mobile-icon{
         display: block;
         width: 50%;
     }
+    .activating-navigation-list{
+        transform: translateX(0%);
+    }
+    /* .hidden{
+        display: none;
+    } */
     main {
         flex-direction: column-reverse;
         height: 70%;
